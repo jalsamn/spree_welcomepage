@@ -6,7 +6,7 @@ Spree::BaseController.class_eval do
 
   def myapp_force_current_user 
     unless spree_current_user 
-      redirect_to welcomepages_index_url 
+      redirect_to welcomepages_index_url and return 
     end 
   end 
 end 
