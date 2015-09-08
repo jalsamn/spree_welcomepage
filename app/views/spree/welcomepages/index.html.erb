@@ -1,5 +1,22 @@
-<bodywelcome>
-<h1> Hello World </h1>
-<img src="/images/rss.jpg" alt="rss feed" />
+<%= render 'welcomepageheader' %>
+<body>
+  
+  <div id="center-div">
+   
+  <div class="transbox">
+    <h3> <logo> Sane Cart </logo> <br> Indian Groceries at your door step! </h3>
+    <p> Enter your zipcode to get started <br>
+    </p>
+    
+    <%= form_tag welcomepages_zipvalidation_path, method: :get, :class => "form-inline" do %>
+    <%= text_field_tag :query, params[:query], {placeholder: 'Zip Code', class: 'form-control pull-center input-small'} %>
+    <%= submit_tag "Enter", name: nil, class: "btn btn-success" %>   
+    <% end %>
+    
+    <p> Already a member? <%= link_to "Sign in", login_path %></p>
 
-</bodywelcome>
+  </div>
+    </div>
+</body>
+
+<%= render 'welcomepagefooter' %>
